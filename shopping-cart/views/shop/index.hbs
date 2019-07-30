@@ -1,0 +1,27 @@
+<div class="row">
+      <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+            <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+                {{successMsg}}
+            </div>
+      </div>
+</div>
+{{# each products     }}
+<!-- This will loop through each Product-->
+<div class="row">
+    {{# each this}}
+   <div class="col-sm-6 col-md-4"> <!-- column 1 -->
+        <div class="thumbnail"> <!--  thumbnail 1  -->
+          <img src="{{this.imagePath}}" alt="china thumbnail"> <!-- image 1 -->
+          <div class="caption"> <!-- caption -->
+            <h3>{{this.title}}</h3>
+            <p class="description" >{{this.description}}</p>
+            <p><b>Rs.{{this.price}}</b></p>
+            <p><a href="/add" class="btn btn-default" role="button">wishlist</a> <!-- btn 1 -->
+              <a href="/add-to-cart/{{this._id}}" class="btn btn-primary" role="button">Add to Cart</a></p>  <!-- btn 2 -->
+          </div>
+        </div>
+      </div>
+    {{/each}}
+      
+
+{{/each}}
